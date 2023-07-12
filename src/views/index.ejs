@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Url Shortener</title>
+</head>
+<body>
+    <h1>Url Shortener | <a href="/clear">Clear</a></h1>
+    <hr>
+    <form method="post" action="/">
+        <label>
+            <textarea name="url" rows="1" cols="200" placeholder="Enter a URL to shorten."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </label>
+    </form>
+    <hr>
+    <h2>Currently Active Links</h2>
+    <% for(let i = 0; i < urls.length; i++) { %>
+        <h4>
+            <span>
+                 <%= urls[i].LongURL %>
+            </span>
+            :
+            <a href="//<%= urls[i].ShortURL %>">
+                <%= urls[i].ShortURL %>
+            </a>
+            <a href="/d/<%= urls[i].ShortURL %>">X</a>
+        </h4>
+    <% } %>
+</body>
+</html>
